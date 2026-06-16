@@ -22,29 +22,29 @@ Date: 2026-06-16. Environment: Python 3.11.
 
 ```
 # Opening advice from the initial board
-$ python3 chess.py
+$ python3 src/chess.py
 ... ADVICE: Best move for White is e2e4.        # in the mandatory allowed set
 
 # Play one move; AI replies; state persisted
-$ python3 chess.py e2e4                          # board shown, advice g1f3, game.txt written
+$ python3 src/chess.py e2e4                          # board shown, advice g1f3, game.txt written
 
 # Error handling
-$ python3 chess.py e2e4 d2d4   -> "too many arguments..."        exit 1
-$ python3 chess.py e2e4444     -> "invalid move notation ..."    exit 1
-$ python3 chess.py z2e4        -> "invalid move notation ..."    exit 1
-$ python3 chess.py e7e8x       -> "invalid promotion piece ..."  exit 1
-$ python3 chess.py e3e4        -> "illegal move ..."             exit 1
+$ python3 src/chess.py e2e4 d2d4   -> "too many arguments..."        exit 1
+$ python3 src/chess.py e2e4444     -> "invalid move notation ..."    exit 1
+$ python3 src/chess.py z2e4        -> "invalid move notation ..."    exit 1
+$ python3 src/chess.py e7e8x       -> "invalid promotion piece ..."  exit 1
+$ python3 src/chess.py e3e4        -> "illegal move ..."             exit 1
 
 # Strict game.txt validation (corrupted -> error, file preserved)
 # 7 lines / blank extra line / bad char / 9-char line  -> "game.txt is corrupted." exit 1
 # valid + single trailing newline -> accepted
 
 # Promotion
-$ python3 chess.py e7e8        -> promotes to Q
-$ python3 chess.py e7e8n       -> promotes to N (underpromotion)
+$ python3 src/chess.py e7e8        -> promotes to Q
+$ python3 src/chess.py e7e8n       -> promotes to N (underpromotion)
 
 # Checkmate (back-rank): a1a8
-$ python3 chess.py a1a8
+$ python3 src/chess.py a1a8
 GAME OVER: White wins.        # board shown, no advice, game.txt deleted, exit 0
 
 # stderr empty on success: confirmed (0 bytes)
