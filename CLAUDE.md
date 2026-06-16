@@ -8,7 +8,7 @@ A simplified, fully local, deterministic **console chess game**. The human
 plays White; a minimax + Alpha-Beta AI plays Black. After the board, the
 program prints a stronger (deeper) move recommendation for White.
 
-The full functional specification lives in `src/Instruction.md` and is the
+The full functional specification lives in `docs/Instruction.md` and is the
 source of truth — read it before changing behavior.
 
 ## Run / validate
@@ -21,7 +21,7 @@ python3 -m py_compile chess.py board.py rules.py engine.py   # compile check
 ```
 
 There is no test framework or linter configured; validation is manual via the
-commands above. `VERIFICATION.md` records the validation suite and results.
+commands above. `docs/VERIFICATION.md` records the validation suite and results.
 
 ## Architecture
 
@@ -63,7 +63,7 @@ Four cohesive source files; `chess.py` is the **only** script run directly.
 
 Modify only what is strictly necessary; do not break behavior that already
 works. The 12 mandatory "critical bugs" and their guards are listed in
-`COVERAGE.md` / `VERIFICATION.md` — preserve those guarantees.
+`docs/COVERAGE.md` / `docs/VERIFICATION.md` — preserve those guarantees.
 
 ## Git
 

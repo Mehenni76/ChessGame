@@ -28,5 +28,5 @@ raw 8×8 board in `game.txt` and deleted when the game ends.
 - `rules.py` — move generation, attacks, legality and end-state detection.
 - `engine.py` — evaluation, Alpha-Beta search, AI move and player advice.
 
-See `CONTRACT.md`, `COVERAGE.md` and `VERIFICATION.md` for the implementation
+See `docs/CONTRACT.md`, `docs/COVERAGE.md` and `docs/VERIFICATION.md` for the implementation
 contract, requirement coverage matrix and verification report.

@@ -1,6 +1,6 @@
 # Requirement Coverage Matrix
 
-Each mandatory requirement from `src/Instruction.md` is mapped to the code that
+Each mandatory requirement from `Instruction.md` is mapped to the code that
 implements it and the validation that exercises it.
 
 ## Output & CLI constraints
