@@ -1,1 +1,32 @@
 # ChessGame
+
+A simplified, fully local, deterministic console chess game. The human plays
+White; a basic AI using minimax with Alpha-Beta pruning plays Black. After the
+board, the program prints a move recommendation for White produced by a
+stronger (deeper) Alpha-Beta search.
+
+## Usage
+
+```bash
+# Show the current board (and advice) without playing a move
+python3 chess.py
+
+# Play one White move (coordinate notation); the AI then replies
+python3 chess.py e2e4
+python3 chess.py g1f3
+python3 chess.py e7e8q   # promotion (q, r, b, n; defaults to queen)
+```
+
+The program accepts at most one argument, never reads interactive input, prints
+all messages in English, and terminates immediately. Game state is stored as a
+raw 8×8 board in `game.txt` and deleted when the game ends.
+
+## Source layout
+
+- `chess.py` — command-line entry point and game flow.
+- `board.py` — board representation, display and `game.txt` persistence.
+- `rules.py` — move generation, attacks, legality and end-state detection.
+- `engine.py` — evaluation, Alpha-Beta search, AI move and player advice.
+
+See `CONTRACT.md`, `COVERAGE.md` and `VERIFICATION.md` for the implementation
+contract, requirement coverage matrix and verification report.
