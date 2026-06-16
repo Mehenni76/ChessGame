@@ -14,25 +14,28 @@ source of truth — read it before changing behavior.
 ## Run / validate
 
 ```bash
-python3 chess.py            # show board (+ advice), no move played
-python3 chess.py e2e4       # play one White move; AI replies as Black
-python3 chess.py e7e8q      # promotion (q,r,b,n; defaults to queen)
-python3 -m py_compile chess.py board.py rules.py engine.py   # compile check
+python3 src/chess.py            # show board (+ advice), no move played
+python3 src/chess.py e2e4       # play one White move; AI replies as Black
+python3 src/chess.py e7e8q      # promotion (q,r,b,n; defaults to queen)
+python3 -m py_compile src/chess.py src/board.py src/rules.py src/engine.py   # compile check
 ```
+
+`game.txt` is created in the current working directory, not in `src/`.
 
 There is no test framework or linter configured; validation is manual via the
 commands above. `docs/VERIFICATION.md` records the validation suite and results.
 
 ## Architecture
 
-Four cohesive source files; `chess.py` is the **only** script run directly.
+Four cohesive source files under `src/`; `src/chess.py` is the **only** script
+run directly.
 
-- `chess.py` — CLI dispatch (0 or 1 arg), game flow, error output, exits.
-- `board.py` — 8×8 board, coordinate conversions, coordinate display, strict
+- `src/chess.py` — CLI dispatch (0 or 1 arg), game flow, error output, exits.
+- `src/board.py` — 8×8 board, coordinate conversions, coordinate display, strict
   `game.txt` load/save/validate/delete.
-- `rules.py` — strict move parsing, pseudo-legal generation, attack detection,
+- `src/rules.py` — strict move parsing, pseudo-legal generation, attack detection,
   legal-move filtering, check/checkmate/stalemate, move application, status.
-- `engine.py` — evaluation (material + PST + mobility + center), move ordering,
+- `src/engine.py` — evaluation (material + PST + mobility + center), move ordering,
   `alphabeta`, Black AI (`select_ai_move`, depth 2), White advice
   (`select_advice_move`, depth 3).
 
